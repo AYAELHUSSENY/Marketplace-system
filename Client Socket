@@ -9,7 +9,7 @@ client.connect(ADDR)
 def write_file(data, filename):
     file = open(filename, 'wb')
     file.write(data)
-def send(msg): # "Ahmed" => [bytes bytes bytes bytes] [HEADER msg]
+def send(msg):
     message = msg.encode(FORMAT) # byte format encoded msg #  '123' => bytes b'x/ab24' => ['4'.encode => 15bytes]
     msg_length = len(message) # bytes(encoded msg) format length 2
     send_length = str(msg_length).encode(FORMAT) # encoded length of bytes msg as string
